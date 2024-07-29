@@ -95,6 +95,7 @@ esac
 
 # Ensure common directories in case of a new installation
 chown -R $APACHE:$APACHE $BASEDIR/mediawiki-common/images
+chown -R $APACHE:$APACHE $BASEDIR/mediawiki-common/LocalSettings.php
 
 # If we're running with SELinux in Enforcing mode, set up upload directory
 GETENFORCE=$(getenforce 2>/dev/null)

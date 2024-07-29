@@ -118,7 +118,10 @@ else
 fi
 
 # Clean up old version
-rm -rf $OLDVERSION
+if "$OLDVERSION" != "$BASEDIR/mediawiki-$MINORVERSION"
+then
+  rm -rf $OLDVERSION
+fi
 
 say "Job's done! Happy Wiki-ing on $MINORVERSION"
 say "Please note that you might still need to update your extensions!"
