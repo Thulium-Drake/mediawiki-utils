@@ -65,7 +65,6 @@ mysql --host=$DBHOST --user=$DBUSER --password=$DBPASSWD $DBNAME < $BACKUPDIR/$D
 # Restore settings
 mkdir -p $BASEDIR/mediawiki-common/images
 cp $BACKUPDIR/LocalSettings.php $BASEDIR/mediawiki-common/LocalSettings.php
-cp $BACKUPDIR/Logo.png $BASEDIR/mediawiki-common/Logo.png
 
 # Restore attachments
 mkdir /tmp/mediawiki-restore.$$

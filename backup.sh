@@ -58,7 +58,6 @@ mysqldump --host=$DBHOST --user=$DBUSER --password=$DBPASSWD $DBNAME > $BACKUPDI
 
 # Backup settings
 cp -L $BASEDIR/mediawiki-common/LocalSettings.php $BACKUPDIR
-cp -L $BASEDIR/mediawiki-common/Logo.png $BACKUPDIR
 
 # Backup attachments
 tar czf $BACKUPDIR/images.tgz --exclude lockdir --exclude archive --exclude thumb --exclude deleted -C $BASEDIR/mediawiki-common/images .

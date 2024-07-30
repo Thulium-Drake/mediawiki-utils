@@ -101,13 +101,10 @@ ln -s $BASEDIR/mediawiki-$MINORVERSION $BASEDIR/$TARGETDIR
 
 # for settings
 ln -s $BASEDIR/mediawiki-common/LocalSettings.php $BASEDIR/mediawiki-$MINORVERSION/
-ln -s $BASEDIR/mediawiki-common/Logo.png $BASEDIR/mediawiki-$MINORVERSION/
 
 # for attachments
 rm -rf $BASEDIR/mediawiki-$MINORVERSION/images
 ln -s $BASEDIR/mediawiki-common/images $BASEDIR/mediawiki-$MINORVERSION/
-
-ln -s $BASEDIR/mediawiki-$MINORVERSION/images $BASEDIR/mediawiki-$MINORVERSION/upload
 
 # Run maintenance jobs for update
 if test $(version $MINORVERSION) -ge $(version "1.40.0")
