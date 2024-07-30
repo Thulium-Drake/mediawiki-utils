@@ -62,7 +62,9 @@ cp -L $BASEDIR/mediawiki-common/LocalSettings.php $BACKUPDIR
 # Backup attachments
 tar czf $BACKUPDIR/images.tgz --exclude lockdir --exclude archive --exclude thumb --exclude deleted -C $BASEDIR/mediawiki-common/images .
 
-if test $(version $MINORVERSION) -ge $(version "1.40.0")
+MINORVERSION=$(basename $(readlink -f $BASEDIR/$TARGETDIR))
+
+if test $(version ${MINORVERSION##*-}) -ge $(version "1.40.0")
 then
   # Export pages as XML for a rainy day
   php $BASEDIR/$TARGETDIR/maintenance/run.php dumpBackup.php --full -q -o gzip:$BACKUPDIR/wiki-pages.xml.gz

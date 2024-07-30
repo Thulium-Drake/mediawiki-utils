@@ -70,7 +70,9 @@ cp $BACKUPDIR/LocalSettings.php $BASEDIR/mediawiki-common/LocalSettings.php
 mkdir /tmp/mediawiki-restore.$$
 tar xzf $BACKUPDIR/images.tgz -C /tmp/mediawiki-restore.$$
 
-if test $(version $MINORVERSION) -ge $(version "1.40.0")
+MINORVERSION=$(basename $(readlink -f $BASEDIR/$TARGETDIR))
+
+if test $(version ${MINORVERSION##*-}) -ge $(version "1.40.0")
 then
   php $BASEDIR/$TARGETDIR/maintenance/run.php importImages.php --overwrite --search-recursively /tmp/mediawiki-restore.$$
   php $BASEDIR/$TARGETDIR/maintenance/run.php rebuildall.php
