@@ -83,7 +83,6 @@ This directory contains the following files:
 
 * $DBNAME.sql: Database dump (contains all pages and other information of the Wiki)
 * LocalSettings.php: Main settings file at the time of the backup
-* Logo.png: Logo at the time of the backup
 * images.tgz: Contents of the 'images' folder, which contains all attachments to the Wiki
 * version.txt: The version of the wiki at the time of the backup
 * wiki-pages.xml: XML export of only wiki pages, can be used to rebuild the Wiki when the DB does not restore
